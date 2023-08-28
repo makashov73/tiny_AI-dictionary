@@ -1,4 +1,4 @@
-# flutter_pet
+# tiny ai-dictionary
 
 A new Flutter project.
 
