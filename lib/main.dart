@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tiny AI-Dicionary',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Tiny AI-Dicionary'),
+      home: const MyHomePage(title: 'tiny AI-Dictionary'),
     );
   }
 }
@@ -34,10 +34,30 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            icon: Image.asset('assets/icons/icon.png'),
+            onPressed: () {},
+          ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(widget.title),
+            ],
+          )),
       //body:
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_rounded),
+            label: 'Words',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.quiz_rounded),
+            label: 'Cards',
+          ),
+        ],
+      ),
     );
   }
 }
